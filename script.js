@@ -4,20 +4,20 @@ $('.navbar-toggle').on('click', function() {
   $('.navbar-nav').slideToggle();
 });
 
-// Contact form submission
 $('form').submit(function(e) {
   e.preventDefault();
   var name = $('#name').val();
   var email = $('#email').val();
   var message = $('#message').val();
   $.ajax({
-    url: $(this).attr('action'),
+    url: 'https://formspree.io/jayvan.aycock@gmail.com',
     type: 'POST',
     data: {
       name: name,
-      email: email,
+      _replyto: email,
       message: message
     },
+    dataType: 'json',
     success: function() {
       $('form')[0].reset();
       alert('Thank you for your message!');
