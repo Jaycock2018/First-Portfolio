@@ -2,11 +2,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
     font-family: "Source Sans Pro", sans-serif;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
+    background-image: url(Images/background.jpg);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 main {
@@ -63,8 +70,6 @@ nav a:hover {
     color: #333;
 }
 
-
-
 #intro {
     display: flex;
     flex-direction: column;
@@ -86,13 +91,18 @@ nav a:hover {
 
   .intro-text {
     text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 10px 10px 90px #333 inset;
+    padding: 100px;
+    border-radius: 300px 150px;
   }
   .sidebar {
     position: fixed;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-color: rgb(32, 30, 30);
+    background-color: #f9f9f9;
+    box-shadow: 10px 10px 25px #333 inset;
     padding: 20px;
     margin: 20px;
     box-sizing: border-box;
@@ -127,6 +137,9 @@ nav a:hover {
       font-size: 1rem;
       margin-bottom: 1rem;
     }
+    .sidebar {
+      display: none;
+    }
   }
 
   #about {
@@ -156,6 +169,16 @@ nav a:hover {
   @media only screen and (max-width: 768px) {
     #about {
       padding: 2rem;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+
+    #about h2 {
+      font-size: 2rem;
+    }
+  
+    #about p {
+      font-size: 1.25rem;
     }
   }
 
@@ -166,11 +189,11 @@ nav a:hover {
     margin-top: 150px;
     margin-bottom: 150px;
     border-radius: 250px;
-    box-shadow: 7px 3px 10px #ff493f inset;
+    box-shadow: 10px 10px 100px #333 inset;
 }
   
   #skills h2 {
-    font-size: 32px;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 30px;
   }
@@ -209,15 +232,26 @@ nav a:hover {
     box-shadow: none;
     transform: translateY(0);
   }
-  
+
   @media screen and (max-width: 767px) {
-    #skills ul {
+    #skills {
+      display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #skills h2 {
+      margin-bottom: 20px;
+    }
+  
+    #skills ul {
+      padding-left: 0;
     }
   
     #skills li {
       margin: 10px;
-      width: calc(100% - 20px);
+      width: calc(80% - 20px);
     }
   }
 
@@ -244,15 +278,17 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
   }
   
   .project {
-    width: 400px;
+    max-width: 35%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
+    flex-basis: 50%;
   }
   
   .project img {
@@ -293,8 +329,37 @@ nav a:hover {
     color: #fff;
   }
 
+  @media (max-width: 768px) {
+    .project {
+      max-width: 45%;
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project {
+      max-width: 100%;
+    }
+  }
+
   #experience {
     padding-top: 150px;
+  }
+
+  #experience h2 {
+    color: rgb(32, 30, 30);
+    background-color: #f9f9f9;
+    padding: 1rem;
+    box-shadow: 1px 1px 20px #333 inset;
+
   }
   
   .timeline {
@@ -312,7 +377,7 @@ nav a:hover {
     transform: translateX(-50%);
     height: 100%;
     width: 2px;
-    background: rgb(32, 30, 30);
+    background: #f9f9f9;
   }
   
   .timeline-item {
@@ -324,13 +389,14 @@ nav a:hover {
     position: relative;
     width: 100%;
     padding: 20px;
-    background: #f9f9f9;
+    background: rgb(32, 30, 30);
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    font-size: 3rem;
   }
   
   .timeline-item-content h3 {
     margin-top: 0;
-    color: #f9f9f9;
+    color: rgb(32, 30, 30);
   }
   
   .timeline-item-content h4 {
@@ -357,8 +423,8 @@ nav a:hover {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #f9f9f9;
-    border: 2px solid #ddd;
+    background: rgb(32, 30, 30);
+    border: 50px solid rgb(32, 30, 30);
   }
   
   .timeline-item::after {
@@ -370,7 +436,7 @@ nav a:hover {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #f9f9f9;
+    background: rgb(32, 30, 30);
   }
   
   .timeline-item:first-child {
@@ -406,7 +472,7 @@ nav a:hover {
     .timeline-item-content:after {
       left: 100%;
       border-width: 8px 0 8px 15px;
-      border-color: transparent transparent transparent #f1f1f1;
+      border-color: transparent transparent transparent rgb(32, 30, 30);
       margin-top: -8px;
     }
   }
@@ -415,7 +481,7 @@ nav a:hover {
     position: relative;
     padding: 20px;
     border-radius: 4px;
-    background-color: rgb(32, 30, 30);
+    background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     margin-left: 70px;
@@ -425,7 +491,7 @@ nav a:hover {
     margin-top: 0;
     font-size: 20px;
     font-weight: 600;
-    color: #f9f9f9;
+    color: rgb(32, 30, 30);
   }
   
   .timeline-item-content h4 {
@@ -433,14 +499,14 @@ nav a:hover {
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 500;
-    color: #f9f9f9;
+    color: rgb(32, 30, 30);
   }
   
   .timeline-item-content p {
     margin-bottom: 0;
     font-size: 16px;
     line-height: 1.5;
-    color: #f9f9f9;
+    color: rgb(32, 30, 30);
   }
   
   .timeline-item-content .timeline-item-tag {
@@ -450,7 +516,7 @@ nav a:hover {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
@@ -459,7 +525,7 @@ nav a:hover {
   
   .timeline-item-content .timeline-item-tag i {
     font-size: 24px;
-    color: #f9f9f9;
+    color: rgb(32, 30, 30);
   }
   
   .timeline-item-content.timeline-item-content-left {
@@ -483,7 +549,8 @@ nav a:hover {
   }
   
   .container {
-    max-width: 1170px;
+    width: 90%;
+    max-width: 800px;
     margin: 0 auto;
   }
   
@@ -560,6 +627,13 @@ nav a:hover {
       flex: 0 0 100%;
       max-width: 100%;
       margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .box {
+      width: 90%;
+      max-width: none;
     }
   }
   
