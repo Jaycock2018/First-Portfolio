@@ -69,6 +69,26 @@ nav a:hover {
     color: #333;
 }
 
+.menu-icon {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 30px;
+  color: #FF473F;
+}
+
+@media screen and (min-width: 601px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .menu {
+    display: none;
+  }
+}
+
 #intro {
     display: flex;
     flex-direction: column;

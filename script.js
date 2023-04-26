@@ -1,9 +1,3 @@
-
-// Responsive navbar toggle
-$('.navbar-toggle').on('click', function() {
-  $('.navbar-nav').slideToggle();
-});
-
 $('form').submit(function(e) {
   e.preventDefault();
   var name = $('#name').val();
